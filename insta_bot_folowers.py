@@ -3,9 +3,11 @@ import logging
 import telebot
 
 from grebne_extractor import process_files, remove_common_items
-import os
+from decouple import config
 
-TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+
+TELEGRAM_TOKEN = config('TELEGRAM_TOKEN')
+
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 logging.basicConfig(
