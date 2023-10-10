@@ -4,7 +4,10 @@ import telebot
 
 from grebne_extractor import process_files, remove_common_items
 
-bot = telebot.TeleBot("TOKEN")
+from decouple import config
+
+TELEGRAM_TOKEN = config('TELEGRAM_TOKEN')
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
