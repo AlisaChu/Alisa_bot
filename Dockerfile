@@ -4,8 +4,16 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+# Установка зависимостей
+RUN pip install decouple
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 CMD ["python3", "insta_bot_followers.py"]
+
+
+
+
+
